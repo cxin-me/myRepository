@@ -1,0 +1,21 @@
+<div>
+    <div>
+        <input type="text" [(ngModel)]="todoInfo" (keyup)="apptoDo($event)" />
+        <input type="button" (click)="clearStorage()" value="清空本地存储"/>
+    </div>
+    <div>
+        <p>未完成</p>
+        <div *ngFor="let todo of myList index as key" [hidden]="todo.state==1" >
+            <input type="checkbox" (click)="updateState(key,'1')" />
+            <span>{{todo.todoInfo}}</span>
+            <a href="javascript:void(0);"(click)="del(key)">删除</a>
+        </div>
+    </div>
+    <div>
+        <p>已经完成</p>
+        <div *ngFor="let done of myList index as key" [hidden]="done.state==0" >
+        <input type="checkbox" checked (click)="updateState(key,'0')" />
+        <span >{{ done.todoInfo}}</span>
+        <a href="javascript:void(0);" (click)="del(key)">删除</a>
+    </div>
+</div>
