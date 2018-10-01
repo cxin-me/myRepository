@@ -7,11 +7,15 @@ import { ProductComponent } from './components/product/product.component';
 import { LocalStorageService } from './services/storage/local-storage.service';
 import { MyBlankService } from './services/blank/my-blank.service';
 import { HttpDataComponent } from './components/postData/http-data/http-data.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    HttpDataComponent
+    HttpDataComponent,
+    HomepageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
