@@ -12,8 +12,8 @@ export class MyBlankService {
     if(ele!=null&&ele!=""&&ele!=undefined){
       return ele;
     }else{
-      throw("字符异常======》字符为 "+ele)
-      return ""
+      console.log("字符异常======》字符为 "+ele)
+      return "";
     }
   }
 }

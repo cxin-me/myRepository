@@ -1,0 +1,20 @@
+<!-- *ngIf="expression" -->
+
+<div *ngIf="true">ngif可看见</div>
+<div *ngIf="false">ngif不可看见</div>
+<!-- <span [ngSwitch]=""> -->
+<ul [ngSwitch]="mycase">
+    <li *ngSwitchCase="1">11111111</li>
+    <li *ngSwitchCase="2">22222222</li>
+    <li *ngSwitchCase="3">33333333</li>
+    <li *ngSwitchCase="4">44444444</li>
+    <li *ngSwitchDefault>aaaaa</li>
+
+</ul>
+<!-- [ngStyle]="{'property': expression}" -->
+<span>第一种</span>
+<div [style.color]="'red'">css样式</div>
+<span>第二种</span>
+<div [ngStyle]="{color:'red','background-color':'yellow'}">css样式</div>
+<span>第三种</span>
+<div [ngStyle]="{color:'red','background-color':'yellow'}" [ngClass]="cssBorder">css样式</div>

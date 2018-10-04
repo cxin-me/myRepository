@@ -9,13 +9,15 @@ import { MyBlankService } from './services/blank/my-blank.service';
 import { HttpDataComponent } from './components/postData/http-data/http-data.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CommandComponent } from './components/command/command.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     HttpDataComponent,
     HomepageComponent,
-    HeaderComponent
+    HeaderComponent,
+    CommandComponent
   ],
   imports: [
     BrowserModule,
