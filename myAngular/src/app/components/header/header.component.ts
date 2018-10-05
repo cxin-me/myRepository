@@ -16,11 +16,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
 
     console.log(this.paramSub+"(在子组件中执行)")
-    this.paramOuter.emit("子组件中的发送广播")
+    this.paramOuter.emit({"aa":"11","bb":"22"})
   
   }
  
-// clicked=():void=>  
 
 
 }

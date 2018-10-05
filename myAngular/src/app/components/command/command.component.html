@@ -18,3 +18,12 @@
 <div [ngStyle]="{color:'red','background-color':'yellow'}">css样式</div>
 <span>第三种</span>
 <div [ngStyle]="{color:'red','background-color':'yellow'}" [ngClass]="cssBorder">css样式</div>
+
+<!-- *ngFor="let item of items" -->
+<ul >
+<li  *ngFor="let item of cssList;let ind = index" [ngClass]="item"      ><span  >循环第{{ind}}个</span></li>
+</ul>
+<!-- ngNonbindable -->
+<div>
+    <span ngNonBindable> this is {{这里写模版的变量}}</span>
+</div>
