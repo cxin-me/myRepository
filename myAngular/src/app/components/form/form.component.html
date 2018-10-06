@@ -1,0 +1,33 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control"  name="email" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" name="pwd" ngModel>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label" >
+        <input class="form-check-input" name="ck" type="checkbox" ngModel> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+<!-- 响应式表单 -->
+  <form [formGroup]="myform" (ngSubmit)="onMySubmit(myform)">
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" [formControl]="myform.controls['email']" >
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" [formControl]="myform.controls['pwd']"  >
+      </div>
+      <div class="form-check">
+        <label class="form-check-label" >  
+          <input class="form-check-input"   [formControl]="myform.controls['ck']"  type="checkbox" > Remember me
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
