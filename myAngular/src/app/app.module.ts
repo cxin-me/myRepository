@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'; //表单模块
-import {  HttpModule, JsonpModule } from '@angular/http'; //表单模块
+import {  HttpModule, JsonpModule } from '@angular/http'; //请求模块
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { LocalStorageService } from './services/storage/local-storage.service';
