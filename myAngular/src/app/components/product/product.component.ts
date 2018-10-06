@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../../services/storage/local-storage.service';
 import * as $ from "jquery";
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -10,8 +11,9 @@ export class ProductComponent implements OnInit {
 
   private todoInfo: String;
   private myList: Array<any>;
-  constructor(private localStorageService: LocalStorageService) {
-
+  private paramId:string;
+  constructor(private localStorageService: LocalStorageService,private router:ActivatedRoute) {
+    router.params.subscribe(params=>this.paramId=params['id'])
   }
   apptoDo = function (e) {
 
@@ -50,6 +52,7 @@ export class ProductComponent implements OnInit {
   }
   ngOnInit() {
     this.myList=this.localStorageService.getLocalStorage("list")
+    console.log(this.paramId)
   }
 
 

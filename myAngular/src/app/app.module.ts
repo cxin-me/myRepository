@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms'; //表单模块
-import {  HttpModule, JsonpModule } from '@angular/http'; //表单模块
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //表单模块
+import { HttpModule, JsonpModule } from '@angular/http'; //请求模块
+import { RouterModule ,Routes,ActivatedRoute} from '@angular/router';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { LocalStorageService } from './services/storage/local-storage.service';
@@ -11,6 +12,18 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CommandComponent } from './components/command/command.component';
 import { FormComponent } from './components/form/form.component';
+
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomepageComponent },
+  { path: 'product/:id', component: ProductComponent },
+  { path: 'command', component: CommandComponent },
+  { path: 'form', component: FormComponent },
+  { path: 'other', redirectTo: 'form' },
+  ];
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +40,10 @@ import { FormComponent } from './components/form/form.component';
     HttpModule,
     JsonpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [LocalStorageService,MyBlankService],
+  providers: [LocalStorageService, MyBlankService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
