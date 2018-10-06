@@ -1,4 +1,4 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="email">Email address:</label>
       <input type="email" class="form-control"  name="email" ngModel>
@@ -13,9 +13,9 @@
       </label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </form> -->
 <!-- 响应式表单 -->
-  <form [formGroup]="myform" (ngSubmit)="onMySubmit(myform)">
+  <!-- <form [formGroup]="myform" (ngSubmit)="onMySubmit(myform)">
       <div class="form-group">
         <label for="email">Email address:</label>
         <input type="email" class="form-control" [formControl]="myform.controls['email']" >
@@ -30,4 +30,23 @@
         </label>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+
+
+    <!-- 整合练习 -->
+
+
+    <form [formGroup]="testForm" (ngSubmit)="onTestSubmit(testForm)">
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" [formControl]="testForm.controls['email']" >
+        <span   class="hidden" *ngIf="testForm.controls['email'].hasError('required')">不能为空</span>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" [formControl]="testForm.controls['pwd']"  >
+        <span  class="hidden" [class.error]="testForm.controls['pwd'].hasError('pwdValidCk')">不能为空，且长度不能大于6</span>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <span *ngIf="testForm.invalid"> 表单验证未能通过</span>
     </form>
