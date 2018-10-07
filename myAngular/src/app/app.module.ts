@@ -12,6 +12,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CommandComponent } from './components/command/command.component';
 import { FormComponent } from './components/form/form.component';
+import { DiComponent } from './components/di/di.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductComponent },
   { path: 'command', component: CommandComponent },
   { path: 'form', component: FormComponent },
+  { path: 'di', component: DiComponent },
   { path: 'other', redirectTo: 'form' },
   ];
 
@@ -32,7 +34,8 @@ const routes: Routes = [
     HomepageComponent,
     HeaderComponent,
     CommandComponent,
-    FormComponent
+    FormComponent,
+    DiComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,10 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LocalStorageService, MyBlankService],
+  providers: [
+    // LocalStorageService,
+    //  MyBlankService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
